@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>github-push</title>
+    <url>/2023/10/11/23-46-58/</url>
+    <content><![CDATA[<span id="more"></span>
+<p>以下操作可以在idea下的Terminal执行</p>
+<h1 id="1-代理查询"><a href="#1-代理查询" class="headerlink" title="1 代理查询"></a>1 代理查询</h1><p>查看是否存在代理地址（一般都是空的）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy</span><br><span class="line">git config --global https.proxy</span><br></pre></td></tr></table></figure>
+<h1 id="2-取消代理"><a href="#2-取消代理" class="headerlink" title="2 取消代理"></a>2 取消代理</h1><p>如果在第一步查询存在代理地址，但是地址不对，要先将代理进行删除，再进行后续的重新添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-重新设置代理"><a href="#3-重新设置代理" class="headerlink" title="3 重新设置代理"></a>3 重新设置代理</h1><p>笔者的梯子软件用的是Clash for Windowss<br>可以看到代理端口是    7890<br><img src="img.png" alt="img.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global https.proxy 127.0.0.1:7890</span><br><span class="line">git config --global http.proxy 127.0.0.1:7890</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="4-结束了"><a href="#4-结束了" class="headerlink" title="4 结束了"></a>4 结束了</h1><p>接下来就是愉快的push了</p>
+]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2023/09/24/20-02-22/</url>
     <content><![CDATA[<hr>
