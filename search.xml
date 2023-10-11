@@ -3,7 +3,8 @@
   <entry>
     <title>github-push</title>
     <url>/2023/10/11/23-46-58/</url>
-    <content><![CDATA[<span id="more"></span>
+    <content><![CDATA[<p>科学上网的同时，push代码到github时不时会提示失败无法连接仓库</p>
+<span id="more"></span>
 <p>以下操作可以在idea下的Terminal执行</p>
 <h1 id="1-代理查询"><a href="#1-代理查询" class="headerlink" title="1 代理查询"></a>1 代理查询</h1><p>查看是否存在代理地址（一般都是空的）</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy</span><br><span class="line">git config --global https.proxy</span><br></pre></td></tr></table></figure>
