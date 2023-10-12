@@ -47,6 +47,7 @@
     <url>/2023/10/12/21-10-00/</url>
     <content><![CDATA[<p>原文链接：<a href="http://t.csdnimg.cn/M6zz3">http://t.csdnimg.cn/M6zz3</a></p>
 <span id="more"></span>
+
 <h1 id="Executors"><a href="#Executors" class="headerlink" title="Executors"></a>Executors</h1><p>在Java 5之后，并发编程引入了一堆新的启动、调度和管理线程的API。Executor框架便是Java 5中引入的，其内部使用了线程池机制，它在java.util.cocurrent 包下，通过该框架来控制线程的启动、执行和关闭，可以简化并发编程的操作。因此，在Java 5之后，通过Executor来启动线程比使用Thread的start方法更好，除了更易管理，效率更好（用线程池实现，节约开销）外，还有关键的一点：有助于避免this逃逸问题——如果我们在构造器中启动一个线程，因为另一个任务可能会在构造器结束之前开始执行，此时可能会访问到初始化了一半的对象用Executor在构造器中。Eexecutor作为灵活且强大的异步执行框架，其支持多种不同类型的任务执行策略，提供了一种标准的方法将任务的提交过程和执行过程解耦开发，基于生产者-消费者模式，其提交任务的线程相当于生产者，执行任务的线程相当于消费者，并用Runnable来表示任务，Executor的实现还提供了对生命周期的支持，以及统计信息收集，应用程序管理机制和性能监视等机制。</p>
 <h2 id="一、Executor的UML图：（常用的几个接口和子类）"><a href="#一、Executor的UML图：（常用的几个接口和子类）" class="headerlink" title="一、Executor的UML图：（常用的几个接口和子类）"></a>一、Executor的UML图：（常用的几个接口和子类）</h2><p><img src="img.png" alt="img.png"></p>
 <p>Executor框架包括：线程池，Executor，Executors，ExecutorService，CompletionService，Future，Callable等。</p>
