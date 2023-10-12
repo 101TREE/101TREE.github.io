@@ -1,9 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/2023/09/24/20-02-22/</url>
+    <content><![CDATA[<hr>
+<span id="more"></span>
+<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <tags>
+        <tag>hello world</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>github-push</title>
+    <url>/2023/10/11/23-46-58/</url>
+    <content><![CDATA[<p>科学上网的同时，push代码到github时不时会提示失败无法连接仓库</p>
+<span id="more"></span>
+<p>以下操作可以在idea下的Terminal执行</p>
+<h1 id="1-代理查询"><a href="#1-代理查询" class="headerlink" title="1 代理查询"></a>1 代理查询</h1><p>查看是否存在代理地址（一般都是空的）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy</span><br><span class="line">git config --global https.proxy</span><br></pre></td></tr></table></figure>
+<h1 id="2-取消代理"><a href="#2-取消代理" class="headerlink" title="2 取消代理"></a>2 取消代理</h1><p>如果在第一步查询存在代理地址，但是地址不对，要先将代理进行删除，再进行后续的重新添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-重新设置代理"><a href="#3-重新设置代理" class="headerlink" title="3 重新设置代理"></a>3 重新设置代理</h1><p>笔者的梯子软件用的是Clash for Windowss<br>可以看到代理端口是    7890<br><img src="img.png" alt="img.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global https.proxy 127.0.0.1:7890</span><br><span class="line">git config --global http.proxy 127.0.0.1:7890</span><br></pre></td></tr></table></figure>
+<h1 id="4-结束了"><a href="#4-结束了" class="headerlink" title="4 结束了"></a>4 结束了</h1><p>接下来就是愉快的push了</p>
+]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java_Future类讲解</title>
     <url>/2023/10/12/22-05-16/</url>
-    <content><![CDATA[<h2 id="1-Future的应用场景"><a href="#1-Future的应用场景" class="headerlink" title="1 Future的应用场景"></a>1 Future的应用场景</h2><p>​    在并发编程中，我们经常用到非阻塞的模型，在之前的多线程的三种实现中，不管是继承thread类还是实现runnable接口，都无法保证获取到之前的执行结果。通过实现Callback接口，并用Future可以来接收多线程的执行结果。</p>
+    <content><![CDATA[<p>java</p>
+<span id="more"></span>
+<h2 id="1-Future的应用场景"><a href="#1-Future的应用场景" class="headerlink" title="1 Future的应用场景"></a>1 Future的应用场景</h2><p>​    在并发编程中，我们经常用到非阻塞的模型，在之前的多线程的三种实现中，不管是继承thread类还是实现runnable接口，都无法保证获取到之前的执行结果。通过实现Callback接口，并用Future可以来接收多线程的执行结果。</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Future表示一个可能还没有完成的异步任务的结果，针对这个结果可以添加Callback以便在任务执行成功或失败后作出相应的操作。</span><br><span class="line"></span><br><span class="line">举个例子：比如去吃早点时，点了包子和凉菜，包子需要等3分钟，凉菜只需1分钟，如果是串行的一个执行，在吃上早点的时候需要等待4分钟，但是因为你在等包子的时候，可以同时准备凉菜，所以在准备凉菜的过程中，可以同时准备包子，这样只需要等待3分钟。那Future这种模式就是后面这种执行模式。</span><br></pre></td></tr></table></figure>
 
 <h2 id="2-Future的类图结构"><a href="#2-Future的类图结构" class="headerlink" title="2 Future的类图结构"></a>2 Future的类图结构</h2><p>​    Future接口定义了主要的5个接口方法，有RunnableFuture和SchedualFuture继承这个接口，以及CompleteFuture和ForkJoinTask继承这个接口。</p>
@@ -124,48 +168,6 @@ public static void main(String[] args) throws InterruptedException &#123;
 ]]></content>
       <tags>
         <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>github-push</title>
-    <url>/2023/10/11/23-46-58/</url>
-    <content><![CDATA[<p>科学上网的同时，push代码到github时不时会提示失败无法连接仓库</p>
-<span id="more"></span>
-<p>以下操作可以在idea下的Terminal执行</p>
-<h1 id="1-代理查询"><a href="#1-代理查询" class="headerlink" title="1 代理查询"></a>1 代理查询</h1><p>查看是否存在代理地址（一般都是空的）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy</span><br><span class="line">git config --global https.proxy</span><br></pre></td></tr></table></figure>
-<h1 id="2-取消代理"><a href="#2-取消代理" class="headerlink" title="2 取消代理"></a>2 取消代理</h1><p>如果在第一步查询存在代理地址，但是地址不对，要先将代理进行删除，再进行后续的重新添加</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>
-
-<h1 id="3-重新设置代理"><a href="#3-重新设置代理" class="headerlink" title="3 重新设置代理"></a>3 重新设置代理</h1><p>笔者的梯子软件用的是Clash for Windowss<br>可以看到代理端口是    7890<br><img src="img.png" alt="img.png"></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global https.proxy 127.0.0.1:7890</span><br><span class="line">git config --global http.proxy 127.0.0.1:7890</span><br></pre></td></tr></table></figure>
-<h1 id="4-结束了"><a href="#4-结束了" class="headerlink" title="4 结束了"></a>4 结束了</h1><p>接下来就是愉快的push了</p>
-]]></content>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2023/09/24/20-02-22/</url>
-    <content><![CDATA[<hr>
-<span id="more"></span>
-<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <tags>
-        <tag>hello world</tag>
       </tags>
   </entry>
   <entry>
